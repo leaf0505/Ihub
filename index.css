@@ -1,161 +1,92 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>residence castel des flots bleus</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="logo.jpg" alt="Logo" class="logo">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="calendrier.html">Calendrier</a></li>
+                <li><a href="connexion.html">connexion</a></li>
+            </ul>
+        </nav>
+    </header>
 
-header {
-    background-color: #1a0383;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
+    <section id="accueil">
+        <p>Bienvenue a la residence castel des flots bleus.</p>
+        <div class="image-container">
+            <img src="residence.jpg" alt="residence castel" class="image_residence">
+        </div>
+    </section>
 
-.logo {
-    max-width: 25px;
-    border-radius: 50%; /* Pour arrondir les bords et obtenir un cercle */
-    object-fit: cover;
-  }
+    <section id="menu">
+        <div class="menu-container">
+            <img src="menu_logo_modifier.jpg" alt="MENU" class="image_plat">
+        </div>
+        <div class="plat">
+            <img src="plat.png" alt="image" class="image_plat">
+            <h2>Poulet BBQ et Pommes de terre rôties</h2>
+            <button onclick="afficherDetails('poulet_bbq')">Voir plus</button>
+        </div>
+        <div class="plat">
+            <img src="plat.png" alt="image" class="image_plat">
+            <h2>Poulet frit</h2>
+            <button onclick="afficherDetails('poulet_frit')">Voir plus</button>
+        </div>
+        <div class="plat">
+            <img src="plat.png" alt="image" class="image_plat">
+            <h2>Dinner bouilli</h2>
+            <button onclick="afficherDetails('dinner_bouilli')">Voir plus</button>
+        </div>
+        <div class="plat">
+            <img src="plat.png" alt="image" class="image_plat">
+            <h2>Gaufre</h2>
+            <button onclick="afficherDetails('gaufre')">Voir plus</button>
+        </div>
+        <div class="plat">
+            <img src="plat.png" alt="image" class="image_plat">
+            <h2>Sloppy Joe</h2>
+            <button onclick="afficherDetails('sloppy_joe')">Voir plus</button>
+        </div>
+        <div class="plat">
+            <img src="plat.png" alt="image" class="image_plat">
+            <h2>Fèves Mijotées</h2>
+            <button onclick="afficherDetails('feves_mijotees')">Voir plus</button>
+        </div>
+        <div class="plat">
+            <img src="plat.png" alt="image" class="image_plat">
+            <h2>Poulet aigre doux</h2>
+            <button onclick="afficherDetails('poulet_aigre_doux')">Voir plus</button>
+        </div>
+    </section>
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+    <section id="apropos">
+        <h1>À propos</h1>
+        <p>C’est comme ça qu’il se voyait à cette époque. Un peu rebelle envers ce monde. L’informatique l’avait aidé à s’enfermer un peu plus dans cet état. Il était devenu doué d’une logique à toute épreuve et d’une intelligence remarquable, mais surtout, il était devenu insociable. Avec l’âge, le besoin de trouver l’âme sœur avait pris le dessus et il avait été un peu obligé de rencontrer des gens, de parler avec eux. Très difficile au début, il avait réussi à vaincre ces préjugés. Il avait accepté la lenteur d’esprit des autres ainsi que leur manque de logique.
+            <br>
+            C’est lui aussi qui était à la base du dernier processeur, le sphéro. Un processeur ayant une architecture en forme de sphère et capable de traiter les informations à une vitesse jamais atteinte. Tous les ordinateurs en étaient équipés. Le créateur officiel, le Dr. Stewart Davis, n’était bien sûr pas au courant de la présence de Prélude dans son projet. Prélude avait simplement suggéré légèrement au Dr. En modifiant légèrement ses documents.
+            <br>           
+            Une voiture venait d’arriver de l’autre côté de la barrière. Une personne sortit. Un militaire. Il était comme dans les films de guerre pensa David. Les décorations remplissaient l’avant de sa veste. Il s’approcha de la voiture où se trouvait David. Le chauffeur ouvrit la fenêtre.
+            <br>           
+            C’est comme ça qu’il se voyait à cette époque. Un peu rebelle envers ce monde. L’informatique l’avait aidé à s’enfermer un peu plus dans cet état. Il était devenu doué d’une logique à toute épreuve et d’une intelligence remarquable, mais surtout, il était devenu insociable. Avec l’âge, le besoin de trouver l’âme sœur avait pris le dessus et il avait été un peu obligé de rencontrer des gens, de parler avec eux. Très difficile au début, il avait réussi à vaincre ces préjugés. Il avait accepté la lenteur d’esprit des autres ainsi que leur manque de logique.</p>
+    </section>
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fermerDetails()">&times;</span>
+            <h2 id="modalTitre"></h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-/*fin du header css*/
-
-section {
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* image accueil */
-#accueil {
-    background-color: #f0f0f0; /* Ajoute une couleur de fond pour réduire l'effet de vide */
-    text-align: center; /* Centre tout le contenu */
-    padding-top: 0;
-}
-
-#accueil p {
-    font-family: 'Times New Roman', serif;
-    font-size: 24px;
-    margin-bottom: 20px; /* Espace sous le texte */
-    margin-top: 0;
-}
-
-.image-container {
-    width: 100%; /* Occupe toute la largeur disponible */
-    height: 100vh; /* Occupe toute la hauteur de la fenêtre (viewport height) */
-    overflow: hidden; /* Cache les parties de l'image qui dépassent */
-    position: relative; /* Permet de positionner l'image correctement */
-}
-
-/* Style de l'image */
-.image_residence {
-    width: 100%; /* Occupe toute la largeur du conteneur */
-    height: 100%; /* Occupe toute la hauteur du conteneur */
-    object-fit: cover; /* Couvre tout l'espace sans déformer l'image */
-    position: absolute; /* Positionne l'image par rapport au conteneur */
-    top: 0;
-    left: 0;
-}
-
-/* Style du menu */
-
-#menu {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-.menu-container {
-    width: 200px;
-    height: 100px;
-    overflow: hidden;
-}
-
-.image_menu {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.plat {
-    background-color: #f9f9f9; /* Fond légèrement gris */
-    border: 1px solid #ccc; /* Bordure grise */
-    border-radius: 10px; /* Coins arrondis */
-    padding: 15px;
-    margin-bottom: 10px; /* Espace entre les plats */
-    text-align: center; /* Alignement du texte à gauche */
-}
-
-.plat h2 {
-    margin: 0 0 10px 0; /* Espace sous le titre */
-    font-size: 1.5em; /* Taille du titre */
-}
-
-.plat button {
-    background-color: #007bff; /* Bouton bleu */
-    color: white; /* Texte blanc */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px; /* Coins arrondis */
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.plat button:hover {
-    background-color: #0056b3; /* Changement de couleur au survol */
-}
-
-.image_plat{
-    width: 200px;
-    height: 100px;
-}
+    <script src="script.js"></script>
+</body>
+</html>
