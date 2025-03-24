@@ -5,9 +5,9 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #1a0383;
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -32,6 +32,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
 }
+/*fin du header css*/
 
 section {
     padding: 20px;
@@ -74,6 +75,19 @@ section {
 }
 
 /* image accueil */
+#accueil {
+    background-color: #f0f0f0; /* Ajoute une couleur de fond pour réduire l'effet de vide */
+    text-align: center; /* Centre tout le contenu */
+    padding-top: 0;
+}
+
+#accueil p {
+    font-family: 'Times New Roman', serif;
+    font-size: 24px;
+    margin-bottom: 20px; /* Espace sous le texte */
+    margin-top: 0;
+}
+
 .image-container {
     width: 100%; /* Occupe toute la largeur disponible */
     height: 100vh; /* Occupe toute la hauteur de la fenêtre (viewport height) */
